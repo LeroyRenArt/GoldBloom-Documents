@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Seraphinae Rising Flipbook</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: #111;
+      height: 100vh;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+    #flipbook {
+      width: 90%;
+      height: 85%;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+      background: #fff;
+    }
+    a.fullscreen-link {
+      margin-top: 10px;
+      color: #ffd700;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
+  <!-- hent PageFlip CSS fra CDN -->
+  <link rel="stylesheet" href="https://unpkg.com/page-flip/dist/page-flip.css" />
+</head>
+<body>
+  <h2>✨ Seraphinae Rising – Dragontouch Blessing ✨</h2>
+  <div id="flipbook"></div>
+  <a class="fullscreen-link" href="Seraphinae_Rising_Dragontouch_COMPLETE_BLESSING.pdf" target="_blank">
+    📖 Open Fullscreen PDF
+  </a>
+
+  <!-- hent PageFlip JS fra CDN -->
+  <script src="https://unpkg.com/page-flip/dist/page-flip.browser.min.js"></script>
+  <script>
+    // Initialiser flipbook
+    const pageFlip = new St.PageFlip(
+      document.getElementById("flipbook"),
+      {
+        width: 600,
+        height: 800,
+        size: "stretch",
+        minWidth: 315,
+        minHeight: 400,
+        maxWidth: 2000,
+        maxHeight: 2500,
+        showCover: true,
+        mobileScrollSupport: true
+      }
+    );
+
+    // Indlæs PDF (din fil skal ligge i samme mappe som index.html)
+    pageFlip.loadFromPDF("Seraphinae_Rising_Dragontouch_COMPLETE_BLESSING.pdf");
+  </script>
+</body>
+</html>
